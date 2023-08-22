@@ -1,5 +1,5 @@
 class Asiento:
-    def _init_(self,color,precio,registro):
+    def __init__(self,color,precio,registro):
         self.color= color
         self.precio= precio
         self.registro = registro
@@ -9,7 +9,7 @@ class Asiento:
             return self.color
 
 class Motor:
-    def _init_(self,numeroCilindros,tipo,registro):
+    def __init__(self,numeroCilindros,tipo,registro):
         self.numeroCilindros = numeroCilindros
         self.tipo= tipo
         self.registro= registro
