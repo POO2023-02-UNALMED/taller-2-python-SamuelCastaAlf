@@ -3,8 +3,7 @@ class Asiento:
         self.color= color
         self.precio= precio
         self.registro = registro
-    def cambiarColor(color):
-        color=str(input())
+    def cambiarColor(self,color):
         if (color == "rojo" or color=="verde" or color=="amarillo" or color=="negro" or color=="blanco"):
             self.color=color
             return self.color
@@ -14,13 +13,12 @@ class Motor:
         self.numeroCilindros = numeroCilindros
         self.tipo= tipo
         self.registro= registro
-    def cambiarRegistro(registro):
+    def cambiarRegistro(self,registro):
         self.registro= registro
-        return self.registro
-    def asignarTipo(tipo):
+
+    def asignarTipo(self,tipo):
         if(tipo=="electrico" or tipo=="gasolina"):
             self.tipo = tipo
-            return self.tipo
         
 class Auto:
     cantidadCreados=0
@@ -31,17 +29,17 @@ class Auto:
         self.marca = marca
         self.motor = Motor
         self.registro = registro
-    def cantidadAsientos():
+    def cantidadAsientos(self):
         countAsientos=0
-        for i in range(len(asientos)):
-            if(asientos[i]!=None):
+        for i in range(len(self.asientos)):
+            if(self.asientos[i]!=None):
                 countAsientos+=1
         return countAsientos
-    def verificarIntegridad():
-        if(registro==motor.registro):
-            for i in range(len(asientos)):
-               if(asientos[i]!=None):
-                    if(asientos[i].registro!=registro):
+    def verificarIntegridad(self):
+        if(self.registro==self.motor.registro):
+            for i in range(len(self.asientos)):
+               if(self.asientos[i]!=None):
+                    if(self.asientos[i].registro!=self.registro):
                         return print("Las piezas no son originales") 
             return print("Auto original")
         else:
